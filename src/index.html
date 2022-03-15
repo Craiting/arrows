@@ -111,14 +111,14 @@
   function checkgamepad() {
     var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
     var gp1 = gamepads[0]
-    var shoot = gp1.buttons[7].pressed || gp1.buttons[2].pressed;
+    var shoot = gp1?.buttons[7].pressed || gp1?.buttons[2].pressed;
 
     rightPressed = false;
     leftPressed = false;
     upPressed = false;
     downPressed = false;
-    var xAxis = gp1.axes[0];
-    var yAxis = gp1.axes[1];
+    var xAxis = gp1?.axes[0];
+    var yAxis = gp1?.axes[1];
 
     if (gp1 && !shoot){
       // Check left to right
